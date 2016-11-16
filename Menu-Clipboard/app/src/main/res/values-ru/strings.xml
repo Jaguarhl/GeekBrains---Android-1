@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Меню и копирование в буфер обмена</string>
+    <string name="copy">Копировать</string>
+    <string name="copy_all">Копировать весь текст</string>
+    <string name="copy_name">Копировать имя</string>
+    <string name="copy_email">Копировать email</string>
+    <string name="copy_this">Скопировать</string>
+    <string name="fname">Имя</string>
+    <string name="lname">Фамилия</string>
+    <string name="email">Email</string>
+    <string name="description">В этом приложении вы можете написать своё имя и адрес электронной почты, а затем скопировать их в буфер обмена.</string>
+    <string name="btn_paste">Вставить</string>
+    <string name="btn_paste_hint">Нажмите, чтобы получить данные из буфера обмена.</string>
+    <string name="msg_not_filled">Не все поля заполнены. Пожалуйста впишите информацию в соответствующие поля.</string>
+    <string name="msg_fname_not_filled">Поле Имя не заполнено. Пожалуйста впишите своё имя.</string>
+    <string name="msg_sname_not_filled">Поле Фамилия не заполнено. Пожалуйста впишите свою фамилию.</string>
+    <string name="msg_email_not_filled">Поле Email не заполнено. Пожалуйста впишите адрес электронной почты.</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Menu-Clipboard</string>
+    <string name="copy">Copy</string>
+    <string name="copy_all">Copy all text</string>
+    <string name="copy_name">Copy Name</string>
+    <string name="copy_email">Copy Email</string>
+    <string name="copy_this">Copy to Clipboard</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="email">Email</string>
+    <string name="description">In this simple application you can write your name and email, and copy them to clipboard.</string>
+    <string name="btn_paste">Paste</string>
+    <string name="btn_paste_hint">Click to paste data from clipboard.</string>
+    <string name="msg_not_filled">Not all of fields are filled. Please fill it.</string>
+    <string name="msg_fname_not_filled">Please write first name.</string>
+    <string name="msg_sname_not_filled">Please write second name.</string>
+    <string name="msg_email_not_filled">Please write email.</string>
+</resources>

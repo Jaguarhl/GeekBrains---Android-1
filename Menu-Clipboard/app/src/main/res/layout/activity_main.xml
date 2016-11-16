@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="ru.dmitry.jag.menu_clipboard.MainActivity">
+
+    <TextView
+            android:text="@string/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editFirstName" android:layout_below="@+id/textView"
+            android:layout_marginTop="34dp"
+            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:hint="@string/fname"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/lname"
+            android:ems="10"
+            android:id="@+id/editSecondName" android:layout_below="@+id/editFirstName" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_alignRight="@+id/editFirstName"
+            android:layout_alignEnd="@+id/editFirstName"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            android:ems="10"
+            android:id="@+id/editEmail" android:layout_below="@+id/editSecondName" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_alignRight="@+id/editSecondName"
+            android:layout_alignEnd="@+id/editSecondName"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/clipboardView" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editEmail" android:layout_alignEnd="@+id/editEmail"
+            android:layout_alignParentBottom="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_paste"
+            android:id="@+id/view_clipboard" android:layout_above="@+id/clipboardView"
+            android:layout_marginBottom="28dp" android:hint="@string/btn_paste_hint"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/clipboardView" android:layout_alignEnd="@+id/clipboardView"
+            android:maxWidth="180dp" android:maxHeight="16dp" android:width="180dp" android:onClick="onPasteButtonClick"/>
+</RelativeLayout>
