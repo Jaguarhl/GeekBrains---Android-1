@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_title">Заказать подушку с фотографией</string>
+    <string name="first_step_title">Выберите фотографии</string>
+    <string name="second_step_title">Введите информацию для заказа</string>
+    <string name="add_photo_title">Добавьте фотографии на обе стороны:</string>
+    <string name="btn_order_pillow">Заказать подушку с фото</string>
+    <string name="btn_view_gallery">Просмотреть фотогаллерею подушек</string>
+    <string name="btn_add_foto_1">Фотография на сторону А</string>
+    <string name="btn_add_foto_2">Фотография на сторону Б</string>
+    <string name="btn_next_step">Далее >></string>
+    <string name="hint_inputName">Введите имя.</string>
+    <string name="hint_inputEmail">Введите email.</string>
+    <string name="hint_inputPhone">Введите контактный номер телефона.</string>
+    <string name="hint_inputComments">Введите здесь адрес и пожелания к заказу.</string>
+    <string name="price_defaultVal">0 руб.</string>
+    <string name="btn_confirm_order">Сделать заказ</string>
+    <string name="err_select_photo">Для продолжения необходимо добавить хотя бы одну фотографию.</string>
+    <string name="err_no_photo_selected">Фотография не выбрана.</string>
+    <string name="err_photo_size">Фотография должна быть размером больше чем 1000 x 1000 пикселей. Данное изображение меньше. Пожалуйста выберите подходящую.</string>
+    <string name="err_photo_unknown">Что-то пошло не так. Обратитесь к разработчику.</string>
+    <string name="err_common_error_message">Поле заполненно некорректно!</string>
+    <string name="err_name_required">Вы забыли указать имя. Имя должно содержать минимум 3 буквы.</string>
+    <string name="err_email_required">Укажите правильный e-mail адрес.</string>
+    <string name="err_phone_required">Укажите правильный номер телефона, по которому мы сможем с Вами связаться.</string>
+    <string name="currency">руб.</string>
+    <string name="email_subject">Новый заказ через мобильное приложение от </string>
+    <string name="email_sending">Отправляем Ваш заказ...</string>
+    <string name="email_contact_info">Контактные данные:\n</string>
+    <string name="email_lead_name">Имя лида: </string>
+    <string name="email_lead_phone">Телефон: </string>
+    <string name="email_lead_email">Email: </string>
+    <string name="email_lead_comments">Комментарий и дополнительная информация к заказу:\n</string>
+    <string name="email_delimiter">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n</string>
+    <string name="email_order">Заказ\n</string>
+    <string name="email_order_size">Размер: </string>
+    <string name="email_order_material">Материал: </string>
+    <string name="email_order_brushes">Кисточки на углы: </string>
+    <string name="email_order_cost">Стоимость: </string>
+    <string name="email_order_images">Изображения прикреплены.</string>
+</resources>

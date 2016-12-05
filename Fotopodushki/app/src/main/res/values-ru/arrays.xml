@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="material">
+        <item>Атлас (глянцевая)</item>
+        <item>Габардин (матовая)</item>
+    </string-array>
+    <string-array name="sizes">
+        <item>35 см X 35 см</item>
+        <item>50 см X 50 см</item>
+        <item>Больше чем 50 см X 50 см</item>
+    </string-array>
+    <string-array name="brushes">
+        <item>Без кисточек</item>
+        <item>Добавить кисточки на углы</item>
+    </string-array>
+    <integer-array name="material_price">
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="sizes_price">
+        <item>0</item>
+        <item>200</item>
+        <item>500</item>
+    </integer-array>
+    <integer-array name="brushes_price">
+        <item>0</item>
+        <item>300</item>
+    </integer-array>
+</resources>
