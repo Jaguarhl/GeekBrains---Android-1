@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".activities.SecondStepActivity" android:label="@string/second_step_title">
         </activity>
+        <activity android:name=".activities.FinalActivity" android:label="@string/order_done_title">
+        </activity>
     </application>
 
 </manifest>

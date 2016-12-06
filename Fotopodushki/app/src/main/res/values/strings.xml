@@ -4,11 +4,13 @@
     <string name="first_step_title">Choose photo</string>
     <string name="second_step_title">Enter information for an order</string>
     <string name="add_photo_title">Add photo you like to A and B sides:</string>
+    <string name="order_done_title">Order completed</string>
     <string name="btn_order_pillow">Order a pillow with photo</string>
     <string name="btn_view_gallery">View pillows gallery</string>
     <string name="btn_add_foto_1">Add photo to side A</string>
     <string name="btn_add_foto_2">Add photo to side B</string>
     <string name="btn_next_step">Next >></string>
+    <string name="btn_ok">OK</string>
     <string name="hint_inputName">Enter your name.</string>
     <string name="hint_inputEmail">Enter your email.</string>
     <string name="hint_inputPhone">Enter your phone.</string>
@@ -39,4 +41,5 @@
     <string name="email_order_brushes">Brushes: </string>
     <string name="email_order_cost">Order cost: </string>
     <string name="email_order_images">Images is attached to mail.</string>
+    <string name="order_done">Your order is sent. Please wait for manager call on phone.</string>
 </resources>

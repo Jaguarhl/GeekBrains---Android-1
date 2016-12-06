@@ -4,6 +4,7 @@
     <string name="first_step_title">Выберите фотографии</string>
     <string name="second_step_title">Введите информацию для заказа</string>
     <string name="add_photo_title">Добавьте фотографии на обе стороны:</string>
+    <string name="order_done_title">Оформление заказа завершено</string>
     <string name="btn_order_pillow">Заказать подушку с фото</string>
     <string name="btn_view_gallery">Просмотреть фотогаллерею подушек</string>
     <string name="btn_add_foto_1">Фотография на сторону А</string>
@@ -38,4 +39,5 @@
     <string name="email_order_brushes">Кисточки на углы: </string>
     <string name="email_order_cost">Стоимость: </string>
     <string name="email_order_images">Изображения прикреплены.</string>
+    <string name="order_done">Ваш заказ отправлен. Спасибо.\nОжидайте звонка от нашего менеджера в ближайшее время!</string>
 </resources>

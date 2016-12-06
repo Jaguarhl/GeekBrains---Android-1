@@ -31,8 +31,18 @@ import ru.dmitry.kartsev.fotopodushki.models.*;
  */
 
 public class SecondStepActivity extends AppCompatActivity {
-    public static final int MIN_PHONE_NUM = 7;
+    public final String STATE_VALUE_IMG_A = "ru.dmitry.kartsev.fotopodushki.imgDecodableStringA";
+    public final String STATE_VALUE_IMG_B = "ru.dmitry.kartsev.fotopodushki.imgDecodableStringB";
+    public final String STATE_VALUE_SIZE = "ru.dmitry.kartsev.fotopodushki.secondStepSpinnerSize";
+    public final String STATE_VALUE_MATERIAL = "ru.dmitry.kartsev.fotopodushki.secondStepSpinnerMaterial";
+    public final String STATE_VALUE_BRUSHES = "ru.dmitry.kartsev.fotopodushki.secondStepSpinnerBrushes";
+    public final String STATE_VALUE_NAME = "ru.dmitry.kartsev.fotopodushki.secondStepTextName";
+    public final String STATE_VALUE_EMAIL = "ru.dmitry.kartsev.fotopodushki.secondStepTextEmail";
+    public final String STATE_VALUE_PHONE = "ru.dmitry.kartsev.fotopodushki.secondStepTextPhone";
+    public final String STATE_VALUE_COMMENTS = "ru.dmitry.kartsev.fotopodushki.secondStepTextComments";
+    public final int MIN_PHONE_NUM = 7;
     public final int MIN_NAME_SYMB = 3;
+    public final int CHOOSER_ACTIVITY = 10;
 
     private static Order order;
     private Spinner spinnerMaterial, spinnerSize, spinnerBrushes;
@@ -60,6 +70,18 @@ public class SecondStepActivity extends AppCompatActivity {
 
         finalOrderPrice = getBaseContext().getResources().getInteger(R.integer.start_price);
         calculatePrice();
+
+        if(savedInstanceState != null) {
+            order.setFilePathA(savedInstanceState.getString(STATE_VALUE_IMG_A));
+            order.setFilePathB(savedInstanceState.getString(STATE_VALUE_IMG_B));
+            spinnerMaterial.setSelection(savedInstanceState.getInt(STATE_VALUE_MATERIAL));
+            spinnerSize.setSelection(savedInstanceState.getInt(STATE_VALUE_SIZE));
+            spinnerBrushes.setSelection(savedInstanceState.getInt(STATE_VALUE_BRUSHES));
+            inpName.setText(savedInstanceState.getString(STATE_VALUE_NAME));
+            inpEmail.setText(savedInstanceState.getString(STATE_VALUE_EMAIL));
+            inpPhone.setText(savedInstanceState.getString(STATE_VALUE_PHONE));
+            inpComments.setText(savedInstanceState.getString(STATE_VALUE_COMMENTS));
+        }
     }
 
     private void initTextEditBehavior() {
@@ -213,9 +235,15 @@ public class SecondStepActivity extends AppCompatActivity {
                         uris.add(path);
                     }
                     emailIntent .putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
-                    emailIntent .putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_subject) + " " + order.getClientName());
+                    emailIntent .putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_subject) + " (" + order.getClientName() + ")");
                     emailIntent .putExtra(Intent.EXTRA_TEXT, order.getMail());
-                    startActivity(Intent.createChooser(emailIntent , getResources().getString(R.string.email_sending)));
+                    try {
+                        //startActivity(Intent.createChooser(emailIntent, /*getResources().getString(R.string.email_sending)*/"Sending order..."));
+                        startActivityForResult(Intent.createChooser(emailIntent, getResources().getString(R.string.email_sending)), /*"Sending order..."*/CHOOSER_ACTIVITY);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 }
             }
         });
@@ -320,6 +348,22 @@ public class SecondStepActivity extends AppCompatActivity {
         });
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        try {
+            if(requestCode == CHOOSER_ACTIVITY) {
+                try {
+                    FinalActivity.openView(SecondStepActivity.this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void openView(Context context, Order ord) {
         order = ord;
         Intent intent = new Intent(context, SecondStepActivity.class);
@@ -347,5 +391,20 @@ public class SecondStepActivity extends AppCompatActivity {
                 return android.util.Patterns.PHONE.matcher(target).matches();
             }
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(STATE_VALUE_IMG_A, order.getFilePathA());
+        outState.putString(STATE_VALUE_IMG_B, order.getFilePathB());
+        outState.putInt(STATE_VALUE_MATERIAL, spinnerMaterial.getSelectedItemPosition());
+        outState.putInt(STATE_VALUE_SIZE, spinnerSize.getSelectedItemPosition());
+        outState.putInt(STATE_VALUE_BRUSHES, spinnerBrushes.getSelectedItemPosition());
+        outState.putString(STATE_VALUE_NAME, inpName.getText().toString());
+        outState.putString(STATE_VALUE_EMAIL, inpEmail.getText().toString());
+        outState.putString(STATE_VALUE_PHONE, inpPhone.getText().toString());
+        outState.putString(STATE_VALUE_COMMENTS, inpComments.getText().toString());
+
+        super.onSaveInstanceState(outState);
     }
 }

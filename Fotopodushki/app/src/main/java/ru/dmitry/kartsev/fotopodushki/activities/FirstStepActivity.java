@@ -46,13 +46,17 @@ public class FirstStepActivity extends AppCompatActivity {
         initViews();
         setButtonBehavior();
 
-        /*if (savedInstanceState != null) {
+        if (savedInstanceState != null) {
             imgDecodableStringA = savedInstanceState.getString(STATE_VALUE_IMG_A);
             imgDecodableStringB = savedInstanceState.getString(STATE_VALUE_IMG_B);
             ready = savedInstanceState.getBoolean(STATE_VALUE_READY);
             setMiniaturePicture(imagePreviewSideA, imgDecodableStringA);
             setMiniaturePicture(imagePreviewSideB, imgDecodableStringB);
-        }*/
+            updateView();
+        } else {
+            imgDecodableStringB = "";
+            imgDecodableStringB = "";
+        }
     }
 
     private void initViews() {
@@ -63,8 +67,6 @@ public class FirstStepActivity extends AppCompatActivity {
         imagePreviewSideB = (ImageView) findViewById(R.id.imagePreviewSideB);
         imagePhotoA = (ImageView) findViewById(R.id.imagePhotoA);
         imagePhotoB = (ImageView) findViewById(R.id.imagePhotoB);
-        imgDecodableStringB = "";
-        imgDecodableStringB = "";
     }
 
     private void setButtonBehavior() {
@@ -178,12 +180,16 @@ public class FirstStepActivity extends AppCompatActivity {
     }
 
     private void setMiniaturePicture(ImageView currentImageView, String temporaryString) {
-        if(temporaryString.length() > 0) {
-            Picasso.with(this.getBaseContext())
-                    .load("file:///" + temporaryString)
-                    .resize(currentImageView.getMeasuredWidth(), currentImageView.getMeasuredHeight())
-                    .centerCrop()
-                    .into(currentImageView);
+        if((temporaryString.length() > 0) && (currentImageView != null)) {
+            try {
+                Picasso.with(this.getBaseContext())
+                        .load("file:///" + temporaryString)
+                        .resize(currentImageView.getMeasuredWidth(), currentImageView.getMeasuredHeight())
+                        .centerCrop()
+                        .into(currentImageView);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             currentImageView.setImageResource(R.drawable.question);
         }
@@ -203,12 +209,26 @@ public class FirstStepActivity extends AppCompatActivity {
         }
     }
 
-    /*@Override
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString(STATE_VALUE_IMG_A, imgDecodableStringA);
         outState.putString(STATE_VALUE_IMG_B, imgDecodableStringB);
         outState.putBoolean(STATE_VALUE_READY, ready);
 
         super.onSaveInstanceState(outState);
-    }*/
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        imgDecodableStringA = savedInstanceState.getString(STATE_VALUE_IMG_A);
+        imgDecodableStringB = savedInstanceState.getString(STATE_VALUE_IMG_B);
+        ready = savedInstanceState.getBoolean(STATE_VALUE_READY);
+        if(imgDecodableStringA != "") {
+            setMiniaturePicture(imagePreviewSideA, imgDecodableStringA);
+        }
+        if(imgDecodableStringB != "") {
+            setMiniaturePicture(imagePreviewSideB, imgDecodableStringB);
+        }
+        updateView();
+    }
 }

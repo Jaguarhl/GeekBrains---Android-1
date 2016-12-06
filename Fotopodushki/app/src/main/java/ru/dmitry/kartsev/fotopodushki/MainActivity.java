@@ -1,5 +1,7 @@
 package ru.dmitry.kartsev.fotopodushki;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,4 +37,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public static void openView(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 }

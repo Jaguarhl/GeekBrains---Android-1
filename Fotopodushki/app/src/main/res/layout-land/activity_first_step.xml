@@ -74,10 +74,10 @@
             android:layout_marginLeft="35dp" />
 
         <Button
-            android:layout_width="302dp"
             android:layout_height="@dimen/btn_add_photo_size"
             android:text="@string/btn_next_step"
             android:id="@+id/next_step" android:layout_row="11" android:layout_column="7" android:layout_gravity="top|left"
             tools:ignore="RtlHardcoded"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="25dp"
+            android:layout_width="252dp" />
     </GridLayout>
